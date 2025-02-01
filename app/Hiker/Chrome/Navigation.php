@@ -2,6 +2,7 @@
 
 namespace App\Hiker\Chrome;
 
+use App\Hiker\Resources\Recipes\Recipe;
 use Hiker\Components\Icon\Icon;
 use Hiker\Components\Navigation\Link;
 use Hiker\Components\Navigation\NavigationConstructor;
@@ -17,7 +18,7 @@ class Navigation extends NavigationConstructor
     protected function items() : array
     {
         return [
-            //
+            Link::resource(Recipe::class),
         ];
     }
 
