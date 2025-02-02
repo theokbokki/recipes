@@ -35,11 +35,17 @@ class RecipeForm extends Form
         return [
             Step::make($this->subject(), 'general')
                 ->fields([
-                    Text::make('Title', 'title'),
+                    Text::make('Title', 'title')
+                        ->rules('required'),
 
-                    Wysiwyg::make('Ingredients', 'ingredients'),
+                    Text::make('Description', 'description')
+                        ->rules('required'),
 
-                    Wysiwyg::make('Steps', 'steps'),
+                    Wysiwyg::make('Ingredients', 'ingredients')
+                        ->rules('required'),
+
+                    Wysiwyg::make('Steps', 'steps')
+                        ->rules('required'),
                 ])
         ];
     }

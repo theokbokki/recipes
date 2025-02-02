@@ -22,6 +22,7 @@ class Save extends Node implements Saveable
 
         $this->model = $trip->resource()->modelOrNew();
         $this->model->title = $bag->title;
+        $this->model->description = $bag->description;
         $this->model->ingredients = $bag->ingredients;
         $this->model->steps = $bag->steps;
         $this->model->save();
