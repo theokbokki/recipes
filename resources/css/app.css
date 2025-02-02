@@ -4,3 +4,10 @@
 @theme {
     --spacing: 0.0625rem;
 }
+
+[data-role=list] ul,
+[data-role=list] ol {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
