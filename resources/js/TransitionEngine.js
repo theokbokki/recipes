@@ -26,7 +26,7 @@ export default class TransitionEngine {
         this.getElements();
         this.setEvents();
 
-        document.body.classList.remove("opacity-0");
+        document.body.classList.remove("opacity-0", "translate-y-16");
     }
 
     getElements() {
@@ -89,7 +89,7 @@ export default class TransitionEngine {
     }
 
     async transitionPage(newPage) {
-        document.body.classList.add("opacity-0");
+        document.body.classList.add("opacity-0", "translate-y-16");
 
         await this.waitFor(this.transitionDelay);
 

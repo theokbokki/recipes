@@ -19,7 +19,7 @@ export default class HomePage {
 
     setEvents() {
         this.links.forEach((link, index) => {
-            link.classList.remove("hover:bg-stone-100/75");
+            link.classList.remove("hover:bg-stone-100");
 
             link.addEventListener("mouseenter", () => {
                 this.top = 0;
