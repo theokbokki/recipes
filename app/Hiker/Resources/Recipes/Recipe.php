@@ -2,10 +2,10 @@
 
 namespace App\Hiker\Resources\Recipes;
 
+use App\Hiker\Resources\Recipes\Attributes\Description;
+use App\Hiker\Resources\Recipes\Attributes\Title;
 use Hiker\Components\Icon\Icon;
-use Hiker\Components\Text\Text;
 use Hiker\Resource;
-use Hiker\Structures\Archive\Attribute;
 
 class Recipe extends Resource
 {
@@ -47,9 +47,8 @@ class Recipe extends Resource
     public static function getAvailableColumns(): array
     {
         return [
-            Attribute::make('id', 'ID', function ($resource) {
-                return Text::make($resource->id);
-            }),
+            Title::class,
+            Description::class,
         ];
     }
 
@@ -60,7 +59,7 @@ class Recipe extends Resource
      */
     public static function getDefaultColumns(): array
     {
-        return ['id'];
+        return ['title', 'description'];
     }
 
     /**
@@ -70,6 +69,6 @@ class Recipe extends Resource
      */
     public static function getDefaultOrderColumn(): string
     {
-        return 'id';
+        return 'title';
     }
 }

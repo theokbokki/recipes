@@ -2,10 +2,13 @@
 
 namespace App\Hiker\Resources\Recipes;
 
-use Hiker\Tracks\FlowsRepository;
-use Hiker\Tracks\Roadmap;
+use App\Hiker\Resources\Recipes\Views\SingleView;
 use App\Hiker\Resources\Recipes\Forms\RecipeForm;
 use App\Hiker\Resources\Recipes\Nodes\Save;
+use App\Hiker\Resources\Recipes\Nodes\Delete;
+use App\Hiker\Resources\Recipes\Nodes\Restore;
+use Hiker\Tracks\FlowsRepository;
+use Hiker\Tracks\Roadmap;
 
 class RecipeFlows extends FlowsRepository
 {
@@ -67,6 +70,7 @@ class RecipeFlows extends FlowsRepository
     public function read(): Roadmap
     {
         return roadmap()
+            ->show(SingleView::class)
             ->setTransitory();
     }
 
@@ -91,7 +95,14 @@ class RecipeFlows extends FlowsRepository
     public function delete(): Roadmap
     {
         return roadmap()
-            //
-            ->chain('index');
+            ->delete(Delete::class)
+            ->chain('read');
+    }
+
+    public function restore(): Roadmap
+    {
+        return roadmap()
+            ->delete(Restore::class)
+            ->chain('read');
     }
 }
