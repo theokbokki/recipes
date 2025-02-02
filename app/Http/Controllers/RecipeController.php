@@ -12,6 +12,12 @@ class RecipeController extends Controller
      */
     public function __invoke(Request $request, Recipe $recipe)
     {
-        return view('recipe', compact('recipe'));
+        $view = view('recipe', compact('recipe'));
+
+        if ($request->ajax()) {
+            return response()->json(['html' => $view->render()]);
+        }
+
+        return $view;
     }
 }

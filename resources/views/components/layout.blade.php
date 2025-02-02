@@ -8,7 +8,8 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="max-w-640 px-24 mt-80 mx-auto">
+    <body class="max-w-640 px-24 mt-80 mx-auto transition-all duration-300" data-page="{{ $page }}">
+        <script>document.body.classList.add('opacity-0');</script>
         {{ $slot }}
     </body>
 </html>

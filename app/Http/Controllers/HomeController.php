@@ -12,8 +12,13 @@ class HomeController extends Controller
      */
     public function __invoke(Request $request)
     {
-       $recipes = Recipe::all();
+        $recipes = Recipe::all();
+        $view = view('home', compact('recipes'));
 
-        return view('home', compact('recipes'));
+        if ($request->ajax()) {
+            return response()->json(['html' => $view->render()]);
+        }
+
+        return $view;
     }
 }
