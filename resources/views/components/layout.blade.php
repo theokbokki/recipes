@@ -34,7 +34,7 @@
     </head>
     <body class="max-w-640 px-24 pt-80 h-screen mx-auto transition-all duration-300 border-stone-200 min-[672]:border-x" data-page="{{ $page }}">
         <script>document.body.classList.add('opacity-0', 'translate-y-16');</script>
-        <main class="relative">
+        <main class="relative pb-80">
             {{ $slot }}
         </main>
     </body>
