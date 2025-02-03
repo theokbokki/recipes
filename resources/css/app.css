@@ -9,13 +9,15 @@
 [data-role="list"] ol {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
     margin-left: 0.875rem;
+    line-height: 150%;
 }
 
 [data-role="list"] ul {
     list-style-type: disc;
+    gap: 0.5rem;
 }
 [data-role="list"] ol {
     list-style-type: decimal;
+    gap: 0.75rem;
 }
