@@ -5,6 +5,11 @@
     --spacing: 0.0625rem;
 }
 
+html,
+body {
+    scrollbar-gutter: stable;
+}
+
 [data-role="list"] ul,
 [data-role="list"] ol {
     display: flex;
