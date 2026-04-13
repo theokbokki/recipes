@@ -3,3 +3,11 @@
 :root {
     font-family: var(--font-sans);
 }
+
+.js {
+    opacity: 0;
+
+    *, *::before, *::after {
+        transition: none !important;
+    }
+}

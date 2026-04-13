@@ -12,7 +12,7 @@
         border-bottom-left-radius: rem(33);
         border-bottom-right-radius: rem(33);
         box-shadow: 0 0 rem(40) rem(-20) rgb(var(--black), 0);
-        transition: padding 250ms ease-out, box-shadow 250ms ease-out;
+        transition: padding 150ms ease-out, box-shadow 150ms ease-out;
 
         &--desktop {
             display: none;
@@ -29,6 +29,17 @@
 
                 &__dropdown {
                     margin: rem(40) 0;
+                    opacity: 1;
+                }
+
+                &__icon {
+                    &--open {
+                        display: inline-block;
+                    }
+
+                    &--closed {
+                        display: none;
+                    }
                 }
             }
         }
@@ -39,16 +50,53 @@
         }
 
         &__burger {
+            position: relative;
+            padding: 0;
+            width: rem(48);
+            height: rem(48);
             color: rgb(var(--stone-800));
             background: none;
             border: none;
+            cursor: pointer;
+            transition: transform 150ms ease-out;
+
+            &:before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgb(var(--stone-100), 0);
+                transform: scale(.75);
+                transition: background 150ms ease-out, transform 150ms ease-out;
+                border-radius: rem(8);
+            }
+
+            &:hover {
+                &:before {
+                    background: rgb(var(--stone-100), 1);
+                    transform: scale(1);
+                }
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
+        }
+
+        &__icon {
+            position: relative;
+            display: inline-block;
+            z-index: 1;
+
+            &--open {
+                display: none;
+            }
         }
 
         &__wrapper {
             display: grid;
             grid-template-rows: 0fr;
             overflow: hidden;
-            transition: grid-template-rows 250ms ease-out;
+            transition: grid-template-rows 150ms ease-out;
         }
 
         &__dropdown {
@@ -57,7 +105,8 @@
             gap: rem(16);
             min-height: 0;
             margin: 0;
-            transition: margin 250ms ease-out;
+            opacity: 0;
+            transition: margin 150ms ease-out, opacity 150ms ease-out;
         }
 
         &__link {
@@ -67,6 +116,15 @@
             line-height: 100%;
             background: rgb(var(--stone-100));
             border-radius: rem(20);
+            transition: background 150ms ease-out, transform 150ms ease-out;
+
+            &:hover {
+                background: rgb(var(--stone-200));
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
         }
     }
 
