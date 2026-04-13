@@ -111,7 +111,7 @@
 
         &__link {
             padding: rem(24) rem(16);
-            font-size: rem(40);
+            font-size: rem(32);
             font-weight: bold;
             line-height: 100%;
             background: rgb(var(--stone-100));
@@ -129,8 +129,49 @@
     }
 
     @media screen and (min-width: rem(640)) {
+        position: fixed;
+        top: rem(20);
+        left: rem(20);
+        right: rem(20);
+        display: flex;
+        justify-content: space-between;
+
         &--mobile {
             display: none;
+        }
+
+        &--scrolled {
+            .nav {
+                &__left,
+                &__right {
+                    background: rgb(var(--stone-100), .75);
+                    backdrop-filter: blur(rem(20));
+                }
+            }
+        }
+
+        &__left,
+        &__right {
+            display: flex;
+            gap: rem(24);
+            padding: rem(16) rem(24);
+            transition: background 150ms ease-out;
+            border-radius: rem(16);
+        }
+
+        &__link {
+            display: inline-block;
+            font-size: rem(18);
+            opacity: .7;
+            transition: transform 150ms ease-out, opacity 150ms ease-out;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &:active {
+                transform: scale(.95);
+            }
         }
     }
 }

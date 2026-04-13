@@ -5,7 +5,9 @@ import { useEffect } from 'react';
 export default function Layout({ children }) {
     useEffect(() => {
         requestAnimationFrame(() => {
-            document.documentElement.classList.remove('js');
+            requestAnimationFrame(() => {
+                document.documentElement.classList.remove('js');
+            });
         });
     }, []);
 
