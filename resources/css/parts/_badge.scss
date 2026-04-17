@@ -1,0 +1,12 @@
+@use "../utils" as *;
+
+.badge {
+    display: inline-block;
+    padding: rem(4) rem(8);
+    font-size: rem(14);
+    font-weight: bold;
+    line-height: 100%;
+    color: rgb(var(--stone-800));
+    background: rgb(var(--white), .85);
+    border-radius: rem(999);
+}
