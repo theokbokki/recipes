@@ -14,8 +14,8 @@
     }
 
     &__items {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(rem(320), 1fr));
         gap: rem(16);
     }
 }
