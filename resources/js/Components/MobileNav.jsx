@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link } from "@inertiajs/react";
 
 export default function MobileNav() {
     const navRef = useRef(null);
@@ -15,10 +16,10 @@ export default function MobileNav() {
         <nav ref={navRef} className="nav nav--mobile nav--open">
             <h2 className="sro">Main navigation</h2>
             <header className="nav__header">
-                <a href="/profile" className="nav__avatar">
+                <Link href="/profile" className="nav__avatar">
                     <span className="sro">Profile</span>
                     <img src="" alt="" className="nav__img"/>
-                </a>
+                </Link>
                 <button className="nav__burger" type="button" onClick={toggleNav}>
                     <span className="sro">Toggle nav</span>
                     <span className="nav__icon nav__icon--closed">
@@ -31,9 +32,9 @@ export default function MobileNav() {
             </header>
             <div className="nav__wrapper">
                 <div className="nav__dropdown">
-                    <a href="/recipes" className="nav__link">Recipes</a>
-                    <a href="/ingredients" className="nav__link">Ingredients</a>
-                    <a href="/groceries" className="nav__link">Groceries</a>
+                    <Link href="/recipes" className="nav__link">Recipes</Link>
+                    <Link href="/ingredients" className="nav__link">Ingredients</Link>
+                    <Link href="/groceries" className="nav__link">Groceries</Link>
                 </div>
             </div>
         </nav>

@@ -1,4 +1,5 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
+import { Link } from "@inertiajs/react";
 
 export default function Nav() {
     const navRef = useRef(null);
@@ -19,11 +20,11 @@ export default function Nav() {
         <nav ref={navRef} className="nav nav--desktop">
             <h2 className="sro">Main navigation</h2>
             <div className="nav__left">
-                <a href="/recipes" className="nav__link">Recipes</a>
-                <a href="/ingredients" className="nav__link">Ingredients</a>
+                <Link href="/recipes" className="nav__link">Recipes</Link>
+                <Link href="/ingredients" className="nav__link">Ingredients</Link>
             </div>
             <div className="nav__right">
-                <a href="/groceries" className="nav__link">Groceries</a>
+                <Link href="/groceries" className="nav__link">Groceries</Link>
             </div>
         </nav>
     );
