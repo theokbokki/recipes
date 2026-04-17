@@ -20,7 +20,7 @@ class RecipeFactory extends Factory
     public function definition(): array
     {
         return [
-            'title' => fake()->word(),
+            'title' => fake()->words(rand(3, 8), true),
             'color' => Arr::random(Color::cases()),
             'duration' => rand(10, 60).' min',
         ];

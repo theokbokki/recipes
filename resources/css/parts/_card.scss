@@ -2,10 +2,12 @@
 
 .card {
     position: relative;
-    padding: rem(24) rem(16);
     display: flex;
     flex-direction: column-reverse;
+    justify-content: start;
     gap: rem(16);
+    height: 100%;
+    padding: rem(24) rem(16);
     border-radius: rem(20);
     transition: opacity 150ms ease-out, transform 150ms ease-out;
 
@@ -123,6 +125,12 @@
             &__link {
                 color: rgb(var(--pink-fg));
             }
+        }
+    }
+
+    @media screen and (min-width: rem(696)) {
+        &__title {
+            font-size: rem(40);
         }
     }
 }
